@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-dark shadow-sm black-color-main p-0 sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="../../../assets/img/logo-no-background.png" alt="Bootstrap" width="200" height="60">
+      </a>      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end p-4" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item text-light">
+            <a *ngIf="user" class="nav-link" aria-current="page" [routerLink]="['/home']" routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }">Home <i class="bi bi-house"></i> </a>
+          </li>
+          <li class="nav-item text-light">
+            <a *ngIf="user" class="nav-link" aria-current="page" [routerLink]="['/lezioni']" routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }">Appuntamenti <i class="bi bi-calendar"></i> </a>
+          </li>
+          <li>
+            <a *ngIf="!user" class="btn btn-outline-dark rounded-4 ms-3 p-2 px-3 rounded-4 white-color-main mt-1" 
+               [routerLink]="['/login']" routerLinkActive="active">Login</a>
+          </li>
+          <li>
+            <a *ngIf="!user" class="btn btn-outline-dark rounded-4 ms-3 p-2 px-3 rounded-4 white-color-main bg-warning mt-1" 
+               [routerLink]="['/register']" routerLinkActive="active">Sign Up</a>
+          </li>
+          <li>
+            <button *ngIf="user" type="button" class="btn btn-sm btn-outline-warning float-end ms-3 p-2 px-3 rounded-4" 
+                    (click)="logout()">Logout</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  

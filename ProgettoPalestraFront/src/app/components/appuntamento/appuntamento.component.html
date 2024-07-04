@@ -1,0 +1,27 @@
+<div class="container mt-5 vh-100">
+    <div class="card shadow black">
+      <h2 class="card-header text-center bg-warning text-dark mb-4">Lista Appuntamenti</h2>
+      <div *ngIf="appuntamenti.length === 0" class="card-body text-center">
+        <p class="card-text">Nessun appuntamento trovato.</p>
+      </div>
+      <table *ngIf="appuntamenti.length > 0" class="table table-hover">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Data</th>
+            <th scope="col">Ora di Inizio</th>
+            <th scope="col">Ora di Fine</th>
+            <th scope="col">Sala</th>
+          </tr>
+        </thead>
+        <tbody class="thead-dark">
+          <tr *ngFor="let appuntamento of appuntamenti; let i = index">
+            <td>{{ appuntamento.data | date: 'shortDate' }}</td>
+            <td>{{ appuntamento.oraInizio }}</td>
+            <td>{{ appuntamento.oraFine }}</td>
+            <td>{{ appuntamento.sala }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

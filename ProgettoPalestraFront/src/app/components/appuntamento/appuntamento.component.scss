@@ -1,0 +1,26 @@
+.card-header {
+    font-size: 1.5rem;
+    margin-bottom: 20px; /* Aggiunge del margine inferiore */
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .table {
+    background-color: #0A0A0A; /* Colore sfondo nero */
+  }
+  
+  .table-hover tbody tr:hover {
+    background-color: #070606; /* Colore sfondo al passaggio del mouse */
+  }
+  
+  .thead-dark th, .thead-dark td {
+    background-color: #0A0A0A; /* Colore sfondo grigio scuro per l'intestazione */
+    color: #F7F7FF; /* Colore testo bianco */
+  }
+  
+  .black {
+    background-color: #0A0A0A;
+  }
+  
