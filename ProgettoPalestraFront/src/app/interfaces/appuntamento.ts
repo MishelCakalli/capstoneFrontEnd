@@ -4,4 +4,5 @@ export interface Appuntamento {
   oraInizio: string;
   oraFine: string;
   sala: string;
+  utenteId: number;
 }

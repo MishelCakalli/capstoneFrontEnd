@@ -1,5 +1,3 @@
-// auth.service.ts
-
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
@@ -89,6 +87,15 @@ export class AuthService {
     this.timeout = setTimeout(() => {
       this.logout();
     }, millisecondsExp);
+  }
+
+  getUtenteId(): number | null {
+    const token = localStorage.getItem('user');
+    if (token) {
+      const decodedToken = this.jwtHelper.decodeToken(token);
+      return decodedToken?.id; // Supponendo che l'ID dell'utente sia presente nel token decodificato
+    }
+    return null; // Ritorna null se non c'è un token o se l'ID non è presente nel token
   }
   
 }
